@@ -1,0 +1,197 @@
+1. What is the Big O for this?
+
+        1. You want to find a playmate for your dog of the same breed.
+        You yell to the group, and someone yells back
+
+        Answer: Constant time O(1)
+
+        2. You individually ask everyone in the group, and stop
+        when you have a playmate, or when you've asked everyone
+
+        Answer: Linear time - the larger group size the longer it takes
+
+2. Even or Odd
+
+        function isEven(value) {
+                if (value % 2 === 0) {
+                        return true;
+                }
+                else {
+                        return false;
+                }
+        }
+
+        Answer: Constant time - simple arithmetic equation. 
+
+3. Are you here?
+
+        function areYouHere(arr1, arr2) {
+                for (let i = 0; i < arr1.length; i++) {
+                const el1 = arr1[i];
+                for (let j = 0; j < arr2.length; j++) {
+                        const el2 = arr2[j];
+                        if (el1 === el2) return true;
+                }
+                }
+                return false;
+        }
+
+        Answer: Polynomial time - nested loops require the input 
+                size to be raised to the second power
+
+4. Doubler
+
+        function doubleArrayValues(array) {
+                for (let i = 0; i < array.length; i++) {
+                        array[i] *= 2;
+                }
+                return array;
+        }
+
+        Answer: Linear time - run time grows proportionately to the size of the input
+    
+5. Naive Search
+
+        function naiveSearch(array, item) {
+                for (let i = 0; i < array.length; i++) {
+                        if (array[i] === item) {
+                                return i;
+                        }
+                }
+        }
+
+        Answer: Linear time - run time grows proportionately to the size of the input
+    
+6. Creating pairs:
+
+        function createPairs(arr) {
+                for (let i = 0; i < arr.length; i++) {
+                for(let j = i + 1; j < arr.length; j++) {
+                        console.log(arr[i] + ", " +  arr[j] );
+                }
+                }
+        }
+
+        Answer: Polynomial time - nested loops require the input 
+                size to be raised to the second power
+
+7. Compute the sequence
+
+        function compute(num) {
+                let result = [];
+                for (let i = 1; i <= num; i++) {
+        
+                if (i === 1) {
+                        result.push(0);
+                }
+                else if (i === 2) {
+                        result.push(1);
+                }
+                else {
+                        result.push(result[i - 2] + result[i - 3]);
+                }
+                }
+                return result;
+        }
+
+        Answer: This algorithm creates a sequence on numbers in an array
+                Its run time complexity is Linear Tie O(n)
+                A larger input takes a longer time to return
+
+
+8. An effieient Search
+
+        function efficientSearch(array, item) {
+                let minIndex = 0;
+                let maxIndex = array.length - 1;
+                let currentIndex;
+                let currentElement;
+        
+                while (minIndex <= maxIndex) {
+                currentIndex = Math.floor((minIndex + maxIndex) / 2);
+                currentElement = array[currentIndex];
+        
+                if (currentElement < item) {
+                        minIndex = currentIndex + 1;
+                }
+                else if (currentElement > item) {
+                        maxIndex = currentIndex - 1;
+                }
+                else {
+                        return currentIndex;
+                }
+                }
+                return -1;
+        } 
+
+        Answer: Logarithmic time
+                A larger input increases run time but not by much
+
+
+9. Random Element
+
+        function findRandomElement(arr) {
+                return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        Answer: Constant time O(1)
+        Accesses an array and does simple equation
+        
+
+10. What am I?
+
+        function isWhat(n) {
+                if (n < 2 || n % 1 !== 0) {
+                return false;
+                }
+                for (let i = 2; i < n; ++i) {
+                if (n % i === 0) return false;
+                }
+                return true;
+        }
+
+        Answer: Constant Time
+                Runs simple equation to return true or false
+
+11. Tower of Hanoi
+
+function stackRods(numOfDisks, src, mid, dest) {
+        if (numOfDisks > 0) {
+            stackRods(numOfDisks -1, src, mid, dest)
+            console.log("Move disk " + numOfDisks + " from " + src + " to " + dest)
+            stackRods(numOfDisks - 1, mid, src, dest)
+        }
+        return
+}
+
+        Answer: Runtime is exponential O(2^n)
+
+12. Iterative version (see index.js)
+
+13. 
+        1. Counting Sheep - Linear O(n)
+        2. Power Calculator - Linear O(1)
+        3. Reverse String - Linear O(n)
+        4. nth triangular number - Linear O(n)
+        5. String Splitter - Logarithmic Time O(log(n))
+        6. Fibonacci - Linear O(n)
+        7. Factorial - Linear O(n)
+        8. Find A Way Out Of Maze - Linear O(n)
+        9. Find ALL Ways Out Of Maze - Polynomial O(n^k)
+        10. Anagrams - Polynomial O(n^k)
+        11. Organizational Chart - Linear O(n)
+        12. Binary - Linear O(n)
+
+
+14. Iterative Big O
+        1. Counting Sheep - Linear O(n)
+        2. Power Calculator - Constant Time O(1)
+        3. Reverse String - Linear O(n)
+        4. nth triangular number - Linear O(n)
+        5. String Splitter - Logarithmic Time O(log(n))
+        6. Fibonacci - Linear O(n)
+        7. Factorial - Linear O(n)
+
+
+
+        
